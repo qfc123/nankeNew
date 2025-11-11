@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游牧岛 - 下一代活动共创</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>🏝️ 游牧岛内部共创</h1>
+            <p class="subtitle">一起设计下一代活动！</p>
+        </header>
+
+        <!-- 介绍部分 -->
+        <section class="intro">
+            <p>嘿，岛民们！游牧岛准备上线一批<strong>超好玩的新活动功能</strong>，但决定权在你们手里！这不仅是投票，这更是一次<strong>产品共创</strong>——<strong>得票最高的活动形式，将作为新的活动类型，第一时间在游牧岛小程序上线！</strong></p>
+            <p class="highlight">你的选择，直接决定下一个产品功能是什么！🚀</p>
+        </section>
+
+        <!-- 第一轮：Pick！你最想玩哪个？ -->
+        <section class="section">
+            <h2>【第一轮：Pick！你最想玩哪个？】</h2>
+            <p>请从下面5个「活动脑洞」中，选出<strong>1-2个让你心跳加速、立刻想参加的</strong>！</p>
+            
+            <div class="activities-grid" id="play-activities">
+                <!-- 活动卡片将通过JavaScript动态生成 -->
+            </div>
+        </section>
+
+        <!-- 第二轮：创造！你最想发起哪个？ -->
+        <section class="section">
+            <h2>【第二轮：创造！你最想发起哪个？】</h2>
+            <p>现在，换个身份——如果你来当<strong>活动发起人</strong>，上面哪个脑洞让你最有灵感，最想亲自组织一次？</p>
+            <p>（请从上方选项中，选择<strong>最想发起的一个</strong>）</p>
+            
+            <div class="activities-grid" id="host-activities">
+                <!-- 发起活动卡片将通过JavaScript动态生成 -->
+            </div>
+        </section>
+
+        <!-- 提交表单 -->
+        <section class="section">
+            <h2>【参与方式】</h2>
+            <form id="participation-form" class="form" netlify>
+                <input type="hidden" name="form-name" value="participation-form">
+                <input type="hidden" id="play-activities-input" name="play-activities">
+                <input type="hidden" id="host-activity-input" name="host-activity">
+                
+                <div class="form-group">
+                    <label for="nickname">昵称：</label>
+                    <input type="text" id="nickname" name="nickname" required placeholder="请输入你的昵称">
+                </div>
+                
+                <div class="form-group">
+                    <label>我想玩：</label>
+                    <div id="selected-play" class="selected-activities"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>我想发起：</label>
+                    <div id="selected-host" class="selected-activities"></div>
+                </div>
+                
+                <button type="submit" class="submit-btn">提交我的选择</button>
+            </form>
+        </section>
+
+        <!-- 结果展示 -->
+        <section class="section" id="results-section" style="display: none;">
+            <h2>🎉 感谢参与！</h2>
+            <div id="results-content"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
